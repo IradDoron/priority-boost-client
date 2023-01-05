@@ -1,3 +1,3 @@
-import { Goal } from '@/types';
+import { Goal } from 'types';
 
 export const goals: Goal[] = [];

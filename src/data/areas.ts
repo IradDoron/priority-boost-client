@@ -1,3 +1,3 @@
-import { Area } from '@/types';
+import { Area } from 'types';
 
 export const areas: Area[] = [];
