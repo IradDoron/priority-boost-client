@@ -19,7 +19,7 @@ export const NavLink = (props: NavLinkProps) => {
 					padding: '16px',
 				}}
 			>
-				{props.children}{' '}
+				{props.children}
 			</RouterNavLink>
 		</StyledNavLink>
 	);

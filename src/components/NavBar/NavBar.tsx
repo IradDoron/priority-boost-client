@@ -8,13 +8,12 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 
 import { VIEWS_TITLES } from 'utils/constants';
 import { stringsHelpers } from 'utils/helpers';
 
+import { MenuLink } from 'shared/inputs/MenuLink';
 import { NavLink } from 'shared/inputs/NavLink';
 
 export const NavBar = (props: NavBarProps) => {
@@ -77,9 +76,13 @@ export const NavBar = (props: NavBarProps) => {
 							}}
 						>
 							{VIEWS_TITLES.map((page) => (
-								<MenuItem key={page} onClick={handleCloseNavMenu}>
-									<Typography textAlign="center">{page}</Typography>
-								</MenuItem>
+								<MenuLink
+									key={page}
+									onClick={handleCloseNavMenu}
+									to={`/${stringsHelpers.toKebabCase(page)}`}
+								>
+									{page}
+								</MenuLink>
 							))}
 						</Menu>
 					</Box>
