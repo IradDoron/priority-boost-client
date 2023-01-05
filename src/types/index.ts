@@ -1,13 +1,13 @@
+export interface TaskCompleteCondition {
+	description: string;
+	complete: boolean;
+}
+
 export interface Task {
 	id: string;
 	title?: string;
 	description?: string;
-	completeConditions: [
-		{
-			description: string;
-			complete: boolean;
-		}
-	];
+	completeConditions: TaskCompleteCondition[];
 	startDate?: Date;
 	endDate?: Date;
 }
@@ -26,13 +26,16 @@ export interface Goal {
 	description?: string;
 	objectives?: Goal[];
 	tasks?: Task[];
-	startDate?: Date;
-	endDate?: Date;
+	daysToDeadline: number;
+	startDate: Date | null;
+	deadlineDate: Date | null;
+	endDate: Date | null;
 }
 
 export interface Area {
 	id: string;
 	title: string;
 	description?: string;
+	vision: string[];
 	goalsIds: string[];
 }
